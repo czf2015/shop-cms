@@ -1,13 +1,32 @@
 <template>
-  <div>
-    <nuxt />
-  </div>
+  <a-layout id="components-layout-demo-side" style="min-height: 100vh">
+    <leftNav/>
+    <a-layout>
+    <a-layout-header :style="{ background: 'white', padding: 0 }" >
+    <TopNav/>
+    </a-layout-header>
+    <a-layout-content style="margin: 0 16px">
+    <nuxt/>
+    </a-layout-content>
+    </a-layout>
+  </a-layout>
 </template>
 
-<style>
+<script>
+import leftNav from "./left";
+import TopNav from "./top";
+export default {
+  components: {
+    leftNav,
+    TopNav
+  }
+};
+</script>
+
+<style lang='scss'>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
