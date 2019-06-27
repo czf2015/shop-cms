@@ -31,10 +31,10 @@
 <script>
 import api from "@/utils/api.js";
 import editable from "@/components/table/editable.vue";
+import { productName } from "@/mocks/productName.js";
 import { columns, editions } from "./facade.js";
 import { convert } from "./convert.js";
 const url = "/v1/inventory";
-import { productName } from "@/mocks/productName.js";
 
 export default {
   components: {

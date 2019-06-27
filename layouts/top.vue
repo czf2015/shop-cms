@@ -41,13 +41,16 @@
   </div>
 </template>
 
+
 <script>
-import { $v } from "~/assets/js/common/Ajax";
-import { LEMONBOX } from "~/assets/js/common/const";
+import { $v } from "@/assets/js/common/Ajax";
+import { LEMONBOX } from "@/assets/js/common/const";
 import { fail } from "assert";
+
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some(field => fieldsError[field]);
 }
+
 export default {
   data() {
     return {
