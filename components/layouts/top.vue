@@ -59,16 +59,15 @@ export default {
       loginShow: true
     };
   },
-  created(){
-    !sessionStorage.getItem('loginFail')&&sessionStorage.setItem('loginFail','fail')
-    if(sessionStorage.getItem('loginFail')!='fail'){ 
-      this.loginShow = false
+  created() {
+    !sessionStorage.getItem("loginFail") &&
+      sessionStorage.setItem("loginFail", "fail");
+    if (sessionStorage.getItem("loginFail") != "fail") {
+      this.loginShow = false;
     }
   },
-  mounted() {
-  },
+  mounted() {},
   methods: {
-    
     handleSubmit(e) {
       e.preventDefault();
       this.form.validateFields((err, values) => {
@@ -79,7 +78,7 @@ export default {
             d => {
               if (d.status == "success") {
                 this.loginShow = false;
-                sessionStorage.setItem('loginFail','sussess')
+                sessionStorage.setItem("loginFail", "success");
               }
             }
           );
@@ -90,10 +89,10 @@ export default {
       $v.get(LEMONBOX + "/api/v1/logout", "", res => {
         this.$message.success("已退出登陆");
         this.loginShow = true;
-        sessionStorage.setItem('loginFail','fail')
-      }).then((d)=>{
-        console.log(d)
-      })
+        sessionStorage.setItem("loginFail", "fail");
+      }).then(d => {
+        console.log(d);
+      });
     }
   }
 };

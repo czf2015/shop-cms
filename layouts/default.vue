@@ -12,9 +12,11 @@
   </a-layout>
 </template>
 
+
 <script>
-import leftNav from "./left";
-import TopNav from "./top";
+import leftNav from "~/components/left.vue";
+import TopNav from "~/components/top.vue";
+
 export default {
   components: {
     leftNav,
@@ -22,6 +24,7 @@ export default {
   }
 };
 </script>
+
 
 <style lang='scss'>
 html {
